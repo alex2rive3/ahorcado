@@ -1,0 +1,10 @@
+body{
+    text-align: center;
+}
+.card{
+    width: 700px;
+    height: 450px;
+    position: absolute;
+    inset: 0;
+    margin:auto;
+}
