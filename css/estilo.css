@@ -2,6 +2,7 @@
 body{
     text-align: center;
     font-family: 'Montserrat';
+    background-color: #1A1D21;
 }
 .card{
     width: 750px;
@@ -16,4 +17,7 @@ img{
     height: 400px;
     padding-left: 25px;
     margin-left: 48px;
+}
+button{
+    margin-top: 10px;
 }

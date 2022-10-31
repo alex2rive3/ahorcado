@@ -13,6 +13,9 @@ palabraEscritaElement.disabled=true;
 document.getElementById('inicio').addEventListener('click', () => {
     //avilitamos el input para escribir las palabras del test
     palabraEscritaElement.disabled=false;
+    // Definimos el foco en el elemento
+    palabraEscritaElement.focus();
+
     intentos = 5;
     //de manera aleatoria se elije el indice del texto a mostrar
     const indicePalabra = Math.floor(Math.random() * palabras.length);
@@ -35,8 +38,6 @@ document.getElementById('inicio').addEventListener('click', () => {
   
     // Vaciamos el elemento textbox
     palabraElement.value = '';
-    // Definimos el foco en el elemento
-    palabraElement.focus();
   });
 
   //agregamos un escuchador de evento al elemento input
@@ -58,7 +59,7 @@ palabraEscritaElement.addEventListener('input', () => {
             palabraEscritaElement.value = '';
             //mostramos el mensaje de exito
             mensajeElement.innerText = mensaje;
-    
+            mensajeElement.className ="bg-success text-white"
             //desabilitamos el input al terminar 
             palabraEscritaElement.disabled=true;
     
@@ -74,7 +75,7 @@ palabraEscritaElement.addEventListener('input', () => {
             intentos--;
             intentoElement.innerHTML= `Tienes ${intentos} intentos para adivinar la palabra secreta`;
             palabraEscritaElement.value="";
-            palabraEscritaElement.className = '';
+            palabraEscritaElement.className = 'form-control';
         }
     } else {
         palabraEscritaElement.disabled=true;
@@ -82,5 +83,6 @@ palabraEscritaElement.addEventListener('input', () => {
         intentoElement.innerHTML="";
         palabraElement.innerHTML="";
         mensajeElement.innerHTML = "LO SIENTO HAZ PERDIDO";
+        mensajeElement.className = "bg-danger text-white"
     }
   });
